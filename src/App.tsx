@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux"
 import { increment } from "./redux/feature/counterSlice"
-import { RootState } from "@reduxjs/toolkit/query"
+import { useAppDispatch, useAppSelector } from "./redux/hook";
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.count)
-  const dispatch=useDispatch()
+  const count = useAppSelector((state) => state.counter.count)
+  const dispatch=useAppDispatch()
 console.log(count);
 
   return (
